@@ -16,12 +16,12 @@ const handleSignup = (e) => {
   $("#domoMessage").animate({width:'hide'},350);
   
   if($("#user").val() == '' || $("#pass").val() == '' || $("pass2").val() == '') {
-    handleError("RAWR: All fields are required");
+    handleError("All fields required");
 	return false;
   }
   
   if($("#pass").val() !== $("#pass2").val()) {
-    handleError("RAWR: Passwords do not match");
+    handleError("Passwords must match");
 	return false;
   } 
 
