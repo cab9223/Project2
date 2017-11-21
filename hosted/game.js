@@ -10447,11 +10447,12 @@ window.onblur = function () {
 window.onfocus = function () {
 			//console.log("focus at " + Date());
 			app.main.downsized = false;
-			if ((app.main.gameState == app.main.GAME_STATE.DEFAULT || app.main.gameState == app.main.GAME_STATE.TUTORIAL) && app.main.introState == false && app.main.endingState == false && app.main.specialScene == false) {
-						app.main.sound.playBGAudioPause();
-			} else {
-						//app.main.resumeGame();
-			}
+			app.main.sound.playBGAudioPause();
+			/* if((app.main.gameState == app.main.GAME_STATE.DEFAULT || app.main.gameState == app.main.GAME_STATE.TUTORIAL) && app.main.introState == false && app.main.endingState == false && app.main.specialScene == false){
+   	app.main.sound.playBGAudioPause();
+   } else {
+   	//app.main.resumeGame();
+   } */
 };
 
 window.onload = function () {

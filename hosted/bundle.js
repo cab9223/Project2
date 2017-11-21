@@ -520,7 +520,7 @@ var setup = function setup(csrf) {
     //app.main.pausedGame();
     app.main.onScreen = true;
     app.main.sound.playEffect(66);
-    if (app.main.gameState == app.main.GAME_STATE.BEGIN) {
+    if (app.main.gameState != app.main.GAME_STATE.DEFAULT && app.main.gameState != app.main.GAME_STATE.TUTORIAL || app.main.introState == true || app.main.endingState == true || app.main.specialScene == true) {
       app.main.resumeGame();
     }
     return false;
