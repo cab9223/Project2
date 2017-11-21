@@ -18206,7 +18206,7 @@ app.main = (_app$main = {
 			if (this.totalPoints > this.hsTotal) {
 				this.hsTotal = this.totalPoints;
 			}
-			if (this.totalPoints > 0) {
+			if (this.totalScore > 0) {
 				this.victories += 1;
 				this.recentVictory = true;
 			} else {
@@ -18290,9 +18290,9 @@ app.main = (_app$main = {
 			if (this.roundScore2 > this.hs17) {
 				this.hs17 = this.roundScore2;
 			}
-			/* if(this.totalPoints > this.hsTotal){
-   	this.hsTotal = this.totalPoints;
-   } */
+			if (this.totalPoints > this.hsTotal) {
+				this.hsTotal = this.totalPoints;
+			}
 
 			this.destroyed += 1;
 
