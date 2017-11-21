@@ -15,7 +15,7 @@ const csrf = require('csurf');
 
 const port = process.env.PORT || process.env.NODE_PORT || 3000;
 
-const dbURL = process.env.MONGODB_URI || 'mongodb://localhost/DomoMaker';
+const dbURL = process.env.MONGODB_URI || 'mongodb://localhost/RedRibbon';
 
 mongoose.connect(dbURL, { useMongoClient: true }, (err) => {
   if (err) {
@@ -41,6 +41,8 @@ const router = require('./router.js');
 
 const app = express();
 app.use('/assets', express.static(path.resolve(`${__dirname}/../hosted/`)));
+app.use('/images', express.static(path.resolve(`${__dirname}/../hosted/images/`)));
+app.use('/media', express.static(path.resolve(`${__dirname}/../hosted/media/`)));
 app.use(favicon(`${__dirname}/../hosted/img/favicon.png`));
 app.disable('x-powered-by');
 app.use(compression());

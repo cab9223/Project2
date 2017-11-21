@@ -1,14 +1,10 @@
 const handleLogin = (e) => {
   e.preventDefault();
   
-  $("#domoMessage").animate({width:'hide'},350);
-  
   if($("#user").val() == '' || $("#pass").val() == '') {
-    handleError("RAWR: Username or password is empty");
+    handleError("Username or password is empty");
 	return false;
   }
-  
-  console.log($("input[name=_csrf]").val());
   
   sendAjax('POST', $("#loginForm").attr("action"), $("#loginForm").serialize(), redirect);
   
@@ -48,7 +44,7 @@ const LoginWindow = (props) => {
    <label htmlFor="pass">Password: </label>
    <input id="pass" type="password" name="pass" placeholder="password"/>
    <input type="hidden" name="_csrf" value={props.csrf}/>
-   <input className="formSubmit" type="submit" value="Sign in" />
+   <input className="formSubmit" type="submit" value="Access" />
   
   </form>
   );
@@ -70,7 +66,7 @@ const SignupWindow = (props) => {
 	  <label htmlFor="pass2">Password: </label>
 	  <input id="pass2" type="password" name="pass2" placeholder="retype password"/>
 	  <input type="hidden" name="_csrf" value={props.csrf} />
-	  <input className="formSubmit" type="submit" value="Sign Up" />
+	  <input className="formSubmit" type="submit" value="Create" />
 	
 	</form>
   );
@@ -78,6 +74,7 @@ const SignupWindow = (props) => {
 
 
 const createLoginWindow = (csrf) => {
+  $("#mainMessage").text("Log in");
   ReactDOM.render(
     <LoginWindow csrf={csrf} />,
 	document.querySelector("#content")
@@ -85,6 +82,7 @@ const createLoginWindow = (csrf) => {
 };
 
 const createSignupWindow = (csrf) => {
+  $("#mainMessage").text("Regester");
   ReactDOM.render(
     <SignupWindow csrf={csrf} />,
 	document.querySelector("#content")
@@ -93,6 +91,11 @@ const createSignupWindow = (csrf) => {
 
 
 const setup = (csrf) => {
+  canvas[0] = document.querySelector('#canvasBack');
+  ctx[0] = canvas[0].getContext('2d'); 
+  
+  openSong.volume = 0.3;
+	
   const loginButton = document.querySelector("#loginButton");
   const signupButton = document.querySelector("#signupButton");
   
@@ -108,6 +111,11 @@ const setup = (csrf) => {
 	return false;
   });
   
+  loginButton.focus();
+  
+  //Begin update loop
+  requestAnimationFrame(update);
+  
   createLoginWindow(csrf); //default view
 };
 
@@ -120,4 +128,13 @@ const getToken = () => {
 $(document).ready(function() {
   getToken();
 });
+
+
+window.onblur = function(){
+	openSong.pause(); 
+};
+
+window.onfocus = function(){
+	openSong.play(); 
+};
   

@@ -4,6 +4,8 @@ html, body {
     margin: 0;
     padding: 0;
     overflow-x: hidden;
+	color: yellow;
+	font-family: heavy_data, arial, sans-serif;
 }
 
 #logo {
@@ -15,22 +17,84 @@ html, body {
 }
 
 nav {
-    width: 100%;
-    height: 50px;
-    background-color: #55acee;
+    width: 110%;
+	margin-top: -15px;
+	margin-left: -15px;
+    height: 60px;
+	opacity: 0.75;
+    background-color: rgb(0,34,7);
+	border-style:solid;
+	border-color: black;
+	border-width: 5px;
+}
+
+#loginBorder {
+	z-index: -1;
+	position: fixed;
+	left: 43%;
+	top: 59.5%;
+    width: 300px;
+    height: 335px;
+	opacity: 0.6;
+    background-color: rgb(0,34,7);
+	pointer-events: none;
+}
+
+#border2 {
+	z-index: -1;
+	position: fixed;
+	left: 43% !important;
+	top: 59.5% !important;
+	pointer-events: none;
+}
+
+#borderOther {
+	z-index: -1;
+	position: fixed;
+	left: 39.4%;
+	top: 9.8%;
+    width: 450px;
+    height: 750px;
+	opacity: 0.6;
+    background-color: rgb(0,34,7);
+	pointer-events: none;
+}
+
+#border3 {
+	z-index: -1;
+	position: fixed;
+	width: 450px;
+	left: 39.4% !important;
+	top: 9.8% !important;
+	pointer-events: none;
+}
+
+#art {
+	z-index: -2;
+	position: fixed;
+	left: 31.6%;
+	top: 4%;
+    width: 700px;
+	border-style:solid;
+	border-color: black;
+	border-width: 15px;
+    background-color: rgb(0,34,7);
+	opacity: 0.8;
+	pointer-events: none;
 }
 
 nav:nth-child(1) {
-    padding-left: 25px;
+    padding-left: 75px;
 }
 
 .navlink {
-    padding: 5px;
+    padding: 50px;
     padding-top: 12px;
-    padding-left: 20px;
+    padding-left: 181px;
     color: white;
     font-size: 1.3em;
     float: left;
+	outline: none;
 }
 
 .navlink a, .navlink a:link, .navlink a:visited, .navlink a:hover, .navlink a:active {
@@ -38,24 +102,22 @@ nav:nth-child(1) {
     text-decoration: none;
     padding: 5px;
     border-radius: 4px;
-    background-color: #55acee;
-    transition: background-color 0.4s ease;
+    transition: color 2s ease;
 }
 
-.navlink a:hover {
-    transition: background-color 0.8s ease;
-    background-color: #66bdff;
+.navlink a:focus {
+    text-decoration: none;
+    padding: 5px;
+    border-radius: 4px;
+    color: yellow;
+    transition: color 0.4s ease;
 }
 
 .domoForm {
-    border: 2px solid #338acc;
     height: 35px;
     width: 900px;
     margin-top:0px;
     padding-top:10px;
-    background-color: #55acee;
-    border-bottom-right-radius: 4px;
-    border-top-right-radius: 4px;
 }
 
 .domoForm label {
@@ -67,34 +129,15 @@ nav:nth-child(1) {
     color: white;
 }
 
-.domoForm input[type=text] {
-    float:left;
-}
-
-.makeDomoSubmit {
-    transition: background-color 0.4s ease;
-    display: inline;
-    width: 90px;
-    background-color: #55acee;
-    border-radius: 2px;
-    color: white;
-    text-decoration: none;
-}
-
-.makeDomoSubmit:link, .makeDomoSubmit:visited, .makeDomoSubmit:hover, .makeDomoSubmit:active {
-    color: white;
-}
-
-.makeDomoSubmit:hover {
-    transition: background-color 0.4s ease;
-    background-color: #338acc;
-}
 
 .mainForm {
+	position: fixed;
+	top: 66.5%;
+	left: 41.6%;
+	z-index: 3;
     height: 300px;
     width: 350px;
     margin: 0 auto;
-    padding-top: 350px;
     font-size: 1.2em;
 }
 
@@ -103,6 +146,7 @@ nav:nth-child(1) {
 }
 
 .mainForm label {
+	z-index: 3;
     display: inline-block;
     width: 150px;
     margin-right: 10px;
@@ -111,6 +155,7 @@ nav:nth-child(1) {
 }
 
 .formSubmit {
+	z-index: 3;
     transition: background-color 0.4s ease;
     display: block;
     text-align: center;
@@ -118,11 +163,12 @@ nav:nth-child(1) {
     margin-top: 14px;
     font-size: 1.2em;
     width: 100px;
-    background-color: #55acee;
+    background-color: #5c0e05;
     border-radius: 2px;
-    border-color: #66acee;
+    border-color: black;
     padding: 3px 0px;
     color: white;
+	font-family: heavy_data;
     text-decoration: none;
 }
 
@@ -132,13 +178,16 @@ nav:nth-child(1) {
 
 .formSubmit:hover {
     transition: background-color 0.4s ease;
-    background-color: #338acc;
+    background-color: #d1d1d1;
 }
 
 #user, #pass, #pass2, #oldPass{
+	z-index: 3;
     text-align: center;
     font-size: 1.1em;
-    width: 180px;
+    width: 150px;
+	background-color: #d1d1d1;
+	color: #5c0e05;
     border-radius: 6px;
 }
 
@@ -147,85 +196,92 @@ nav:nth-child(1) {
     box-shadow: 0px 0px 1px 1px #55acee;
 }
 
-#domoMessage {
-    display:none;
-    top: 250px;
-    width: 250px;
-    height: 650px;
-    position: absolute;
-    z-index: 200;
-    right: 0px;
-    overflow: hidden;
-}
 
-#domoMessage h3 {
-    width: 200px;
-    position: absolute;
-    top: 0px;
-    left: 20px;
-}
-
-#speech {
-    height: 120px;
-    width: 250px;
-    z-index:300;
+#mainMessage {
+	position: fixed;
+	top: 61.7%;
+	left: 45%;
+	text-align: center;
+    font-size: 1.6em;
+    font-weight: bold;
+    color: #c7c7a1;
+    font-style: italic;
+	width: 220px;
 }
 
 #errorMessage {
+	position: fixed;
+	top: 87.5%;
+	left: 45%;
+	text-align: center;
     font-size: 1.2em;
     font-weight: bold;
-    color: red;
+    color: Yellow;
     font-style: italic;
+	width: 220px;
 }
 
-#domo {
-    z-index: 225;
-    margin-top: -20px;
-    margin-left: 135px;
-    height: 450px;
-    width: 300px;
-    -ms-transform: rotate(330deg);
-    -webkit-transform: rotate(330deg); 
-    transform: rotate(330deg);
-}
 
 #domos {
-    width: 40%;
     min-width: 400px;
-    border: 2px solid #55acee;
-    border-radius: 4px;
     margin: 0 auto;
-    margin-top: 100px;
+    margin-top: 80px;
+	margin-left: 45px;
+	color: white !important;
 }
 
 .domo {
-    width: 95%;
+    width: 400px;
     margin: 0 auto;
     margin-top: 2px;
     margin-bottom: 2px;
-    border: 2px solid #55acee;
-    border-radius: 4px;
-    background-color: #55acee;
+	text-align: center;
     padding: 10px;
     min-height:60px;
     overflow: hidden;
 }
 
-.domo:hover {
-    transition: border-color 0.2s ease-out;
-    border-color: rgba(255,255,255, 0.8);
-    transition: background-color 2.6s ease-out;
-    background-color: #66bfff;
-}
 
 img.domoFace {
     margin-left: 25px;
     margin-right: 10px;
-    height: 50px;
-    width: 50px;
+    height: 60px;
     border-radius: 4px;
-    margin-top:10px;
+    margin-top:23px;
     float:left;
+}
+
+.labled {
+	font-size: 2em !important;
+	color: #c7c7a1 !important;
+}
+
+.labled2 {
+	color: yellow !important;
+}
+
+.labled3 {
+	position: fixed !important;
+	margin-left: -70px;
+	margin-top: 24px;
+	color: #c7c7a1 !important;
+}
+
+.score {
+	width: 350px;
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 2px;
+    padding: 10px;
+    min-height:60px;
+    overflow: hidden;
+	color: white !important;
+	
+}
+
+#scores {
+
+	
 }
 
 h3.emptyDomo {
@@ -236,32 +292,6 @@ h3.emptyDomo {
     margin-top: 18px;
 }
 
-h3.domoName {
-    float:left;
-    width: 200px;
-    font-weight: bold;
-    padding-left: 65px;
-    font-size: 1.5em;
-}
-
-h3.domoAge {
-    float:right;
-    text-align: left;
-    width: 100px;
-    font-weight: bold;
-    padding-right: 40px;
-    font-size: 1.5em;
-}
-
-h3.domoLevel {
-    float:right;
-    text-align: left;
-    width: 100px;
-    font-weight: bold;
-    padding-right: 40px;
-    font-size: 1.5em;
-}
-
 .domo:first-child {
     margin-top: 10px;
 }
@@ -269,3 +299,153 @@ h3.domoLevel {
 .domo:last-child {
     margin-bottom:10px;
 }
+
+#canvasBack {
+  top: -10%;
+  left: -10%;
+  width: 120%;
+  height: 120%;
+  position: fixed;
+  z-index: -5;
+  pointer-events: none;
+}
+
+#ribbon {
+	position: absolute;
+	opacity: 0.75;
+	top: .1%;
+	left: calc(50% - 29px) !important;
+	z-index: -1;
+}
+
+#gameButton {
+	font-size: 1.8em !important;
+	top: -15px;
+	left: -10px;
+	outline: none !important;
+}
+
+#loginButton {
+	position: fixed;
+	left: 31.5% !important;
+	font-size: 1.5em !important;
+	outline: none !important;
+}
+
+#signupButton {
+	position: fixed;
+	left: 63.5% !important;
+	font-size: 1.5em !important;
+}
+
+.disabledLink {
+	color: red !important;
+	text-decoration : none;
+	pointer-events: none;
+	cursor: default;
+}
+
+        canvas{border:1px solid gray;}
+		#audioControls{ display:none;}
+		@font-face {
+			font-family: heavy_data;
+			src: url(media/heavy_data.ttf);
+		}
+		#videoPos {
+			position: absolute;
+			margin: auto;
+			left: calc(25% + 1px);
+			top: 10%;
+			z-index: 2;
+		}
+		#videoPos2 {
+			position: absolute;
+			margin: auto;
+			left: calc(25% + 1px);
+			top: 10%;
+			z-index: -2;
+		}
+		#videoPos3 {
+			position: absolute;
+			margin: auto;
+			left: calc(25% + 330px);
+			top: calc(10% + 275px);
+			z-index: -2;
+		}
+		#videoPos4 {
+			position: absolute;
+			margin: auto;
+			left: calc(25% + 1px);
+			top: 10%;
+			z-index: -2;
+		}
+		#border {
+			position: absolute;
+			margin: auto;
+			left: 25%;
+			top: calc(10% + 310px);
+			z-index: 5;
+		}
+		#bigBorder {
+			position: absolute;
+			margin: auto;
+			left: calc(25% - 5px);
+			top: 10%;
+			z-index: 7;
+		}
+		#smallBar1 {
+			position: absolute;
+			margin: auto;
+			left: calc(25% + 690px);
+			top: calc(10% + 314px);
+			z-index: 3;
+		}
+		#smallBar2 {
+			position: absolute;
+			margin: auto;
+			left: calc(25% + 325px);
+			top: calc(10% + 314px);
+			z-index: 3;
+		}
+		#bar {
+			position: absolute;
+			margin: auto;
+			top: 10%;
+			left: calc(25% + 1px);
+			z-index: -2;
+		}
+		#trueTop {
+			position: absolute;
+			margin: auto;
+			top: 10%;
+			left: 25%;
+			z-index: 7;
+		}
+		#top {
+			position: absolute;
+			margin: auto;
+			top: 10%;
+			left: 25%;
+			z-index: 6;
+		}
+		#main {
+			position: absolute;
+			margin: auto;
+			top: 10%;
+			left: 25%;
+			z-index: 1;
+		}
+		#canvas1 {
+			position:absolute;
+			z-index: 1;
+		}
+      
+		#canvas2{
+			position:absolute;
+			z-index: 8;
+		}
+		
+		#canvas4{
+			position:absolute;
+			z-index: 9;
+		}

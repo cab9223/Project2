@@ -1,7 +1,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8"/>
-  <title>DomoMaker</title>
+  <title>Red Ribbon Androids</title>
   <script crossorigin src="https://unpkg.com/react@15/dist/react.min.js"></script>
   <script crossorigin src="https://unpkg.com/react-dom@15/dist/react-dom.min.js"></script>
   <script crossorigin src="https://unpkg.com/prop-types/prop-types.min.js"></script>
@@ -12,14 +12,29 @@
   <link rel="stylesheet" type="text/css" href="/assets/style.css"/>
 </head>
 <body> 
-  <nav><a href="/login"><img id="logo" src="/assets/img/face.png" alt="face logo"/></a>
+  <nav>
     <div class="navlink"><a id="loginButton" href="/login">Login</a></div>
     <div class="navlink"><a id="signupButton" href="/signup">Sign up</a></div>
+	<img id="ribbon" src="images/RedRibbon.png" width=85px>
   </nav>
-  <section id="content"></section>
-  <div id="domoMessage"><img id="speech" src="/assets/img/speech.png" alt="speech box"/>
-    <h3><span id="errorMessage">Wrong username or password</span></h3><img id="domo" src="assets/img/domo.png" alt="domo"/>
+  <h3><span id="mainMessage">Log in</span></h3>
+  <h3><span id="errorMessage">...Awaiting...</span></h3>
+  <div id="art">
+	<img id="art" src="/assets/images/boxArt1.png">
   </div>
+  <div id="loginBorder">
+  <img id="border2" src="/assets/img/BorderLogin.png">
+  </div>
+  <section id="content"></section>
+    <div id="backgound">
+    <canvas id="canvasBack">
+	    Get a real browser!
+	</canvas>
+    </div>
+  <audio id="openSong"  autoplay loop>
+  <source src="/assets/media/LoginTheme.mp3" type="audio/mpeg">
+    Your browser does not support the audio tag.
+  </audio>
   <script src="/assets/loginBundle.js"></script>
 </body>
 </html>

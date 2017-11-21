@@ -1,7 +1,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8"/>
-  <title>DomoMaker</title>
+  <title>Red Ribbon Androids</title>
   <script crossorigin src="https://unpkg.com/react@15/dist/react.min.js"></script>
   <script crossorigin src="https://unpkg.com/react-dom@15/dist/react-dom.min.js"></script>
   <script crossorigin src="https://unpkg.com/prop-types/prop-types.min.js"></script>
@@ -12,19 +12,143 @@
   <link rel="stylesheet" type="text/css" href="/assets/style.css"/>
 </head>
 <body>
-  <nav><a href="/login"><img id="logo" src="/assets/img/face.png" alt="face logo"/></a>
-    <div class="navlink"><a id="maker" href="/maker">Maker</a></div>
-    <div class="navlink"><a id="passwordButton" href="/passwordChange">Change Password</a></div>
+  <nav>
+	<div class="navlink"><a id="maker" href="/maker">Statistics</a></div>
+	<div class="navlink"><a id="scoreButton" href="/scores">Unrivaled Scores</a></div>
+	<div class="navlink"><a id="gameButton" href="/maker">Game</a></div>
+    <div class="navlink"><a id="passwordButton" href="/passwordChange">User Account</a></div>
 	<div class="navlink"><a href="/logout">Log out</a></div>
+    <img id="ribbon" src="images/RedRibbon.png" width=85px>
   </nav>
+  <h3><span id="mainMessage"></span></h3>
+  <h3><span id="errorMessage"></span></h3>
   <section id="makeDomo">
   </section>
-  <section id="domos">
-  </section>
-  <section id="content"></section>
-  <div id="domoMessage"><img id="speech" src="/assets/img/speech.png" alt="speech box"/>
-    <h3><span id="errorMessage"></span></h3><img id="domo" src="assets/img/domo.png" alt="domo"/>
+  <div id="domos">
   </div>
+  <section id="scores">
+  </section>
+  <section id="moreContent">
+  </section>
+  <div id="visuals">
+    <div id="loginBorder"></div>
+    <img id="border2" src="/assets/img/BorderLogin.png">
+  </div>
+  <div id="visuals2">
+    <div id="borderOther"></div>
+    <img id="border3" src="/assets/img/BorderOther.png">
+  </div>
+  <div id="allContent">
+  <div id="backgound">
+    <canvas id="canvasBack">
+	    Get a real browser!
+	</canvas>
+  </div>
+  <div id="container">
+	<div id="main">
+		<canvas id="canvas1">
+			Get a real browser!
+		</canvas>
+		<canvas id="canvas2">
+			Get a real browser!
+		</canvas>
+	</div>
+	<div id="top">
+		<canvas id="canvas3">
+			Get a real browser!
+		</canvas>
+		
+	</div>
+	<div id="trueTop">
+		<canvas id="canvas4">
+			Get a real browser!
+		</canvas>
+		
+	</div>
+	<div id="videoPos4">
+	<video id="video4" width="1024" height="768">
+	<source src="media/Special.mp4" type="video/mp4">
+	</source>
+	Your browser does not support the video tag.
+	</video>
+	</div>
+	<div id="videoPos3">
+	<video id="video3" width="370" height="370">
+	<source src="media/Opening.mp4" type="video/mp4">
+	</source>
+	Your browser does not support the video tag.
+	</video>
+	</div>
+	<div id="videoPos2">
+	<video id="video2" width="1024" height="768">
+	<source src="media/Ending.mp4" type="video/mp4">
+	</source>
+	Your browser does not support the video tag.
+	</video>
+	</div>
+	<div id="videoPos">
+	<video id="video1" width="1024" height="768">
+	<source src="media/Intro.mp4" type="video/mp4">
+	</source>
+	Your browser does not support the video tag.
+	</video>
+	</div>
+	<div id="bigBorder">
+	<img src="images/screenBorder.png">
+	</img>
+	</div>
+	<div id="border">
+	<img src="images/BorderOpening.png">
+	</img>
+	</div>
+	<div id="bar">
+	<img src="images/blackBar.png">
+	</img>
+	</div>
+	<div id="smallBar1">
+	<img src="images/barTitle.png">
+	</img>
+	</div>
+	<div id="smallBar2">
+	<img src="images/barTitle.png">
+	</img>
+	</div>
+	</div>
+</div>
+	<script src='/assets/game.js'></script>
+	<section id="audioControls">
+		<audio id="bgAudio" src="media/fightTheme1.mp3" controls loop></audio>
+		<audio id="bgAudio2" src="media/endTheme1.mp3" controls loop></audio>
+		<audio id="bgAudio3" src="media/endTheme2.mp3" controls loop></audio>
+		<audio id="bgAudio4" controls loop></audio>
+		<audio id="bgAudio5" src="media/PauseTheme.mp3" controls loop></audio>
+		<audio id="bgAudioTutorial" src="media/tutorialTheme.mp3" controls loop></audio>
+		<audio id="effectAudio0" controls></audio>
+		<audio id="effectAudio1" controls></audio>
+		<audio id="effectAudio2" controls></audio>
+		<audio id="effectAudio3" controls></audio>
+		<audio id="effectAudio4" controls></audio>
+		<audio id="effectAudio5" controls></audio>
+		<audio id="effectAudio6" controls></audio>
+		<audio id="effectAudio7" controls></audio>
+		<audio id="effectAudio8" controls></audio>
+		<audio id="effectAudio9" controls></audio>
+		<audio id="effectAudio10" controls></audio>
+		<audio id="effectAudio11" controls></audio>
+		<audio id="effectAudio12" controls></audio>
+		<audio id="effectAudio13" controls></audio>
+		<audio id="effectAudio14" controls></audio>
+		<audio id="effectAudio15" controls></audio>
+		<audio id="effectAudio16" controls></audio>
+		<audio id="effectAudio17" controls></audio>
+		<audio id="effectAudio18" controls></audio>
+		<audio id="effectAudio19" controls></audio>
+		<audio id="effectAudio20" controls></audio>
+		<audio id="effectAudio21" controls></audio>
+		<audio id="effectAudio22" controls></audio>
+		<audio id="effectAudio23" controls></audio>
+	</section>
   <script src="/assets/bundle.js"></script>
+  <script src="/assets/preloadjs-0.6.1.min.js"></script>
 </body>
 </html>
